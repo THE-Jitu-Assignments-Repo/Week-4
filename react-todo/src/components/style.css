@@ -14,7 +14,6 @@
   border-radius: 10px;
   box-shadow: 0px 0px 4px 4px gray;
   overflow: auto;
-
 }
 
 .form {
@@ -137,3 +136,64 @@
   color: #fff;
 }
 
+.edit-modal {
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.form-edit {
+  background-color: #fefefe;
+  margin: 10% auto; /* 15% from the top and centered */
+  margin-top: 10em;
+  padding: 20px;
+  border: 1px solid #8888;
+  width: 30%;
+  border-radius: 5px;
+}
+
+.edit--form {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid red; */
+}
+
+.radio--edit {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+  gap: 2px;
+}
+.radio--edit legend {
+  font: bold 16px "lucida sans", "trebuchet MS", "Tahoma";
+  color: rgb(71, 116, 240);
+}
+
+.btn-update {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #3096e9;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid red;
+}
+
+.btn-update:hover {
+  color: white;
+  opacity: 70%;
+}

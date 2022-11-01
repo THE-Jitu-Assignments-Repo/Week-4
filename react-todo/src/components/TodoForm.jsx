@@ -6,71 +6,90 @@ import FormModal from "./FormModal";
 import Search from "./Search";
 
 function TodoForm() {
+  // const todos = [];
   const [todos, setTodos] = useState([]);
-  const [val, setVal] = useState({ id: 0,title: "", priority: "" });
+  const [searchedWord, setSearchedWord] = useState("");
+  const [editOpen, setEditOpen] = useState(false);
+  const [val, setVal] = useState({
+    id: Math.floor(Math.random() * 1000),
+    title: "",
+    priority: "",
+  });
   //modal state
   const [isOpen, setIsOpen] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
 
-    setVal({
+    setVal((val) => ({
       ...val,
       [name]: value,
-      id: Math.floor(Math.random()*1000)
-    });
+    }));
+  };
+  const [test, setTest] = useState([]);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    setVal({});
+    setIsOpen(false);
+    if (val !== "") {
+      setTodos([val, ...todos]);
+      setTest(todos);
+    }
+  }
+
+  const closeModal = () => {
+    setEditOpen(false);
   };
 
-  
-const [filteredData, setFilteredData] = useState("")
+  function handleUpdate(event) {
+    event.preventDefault();
 
+    setVal({});
+    closeModal();
+
+    setTodos([val])
+    if (val !== "") {
+      setTodos([val, ...todos]);
+
+    };
+  }
+
+  const newData = todos;
+
+  const [filteredData, setFilteredData] = useState(newData);
 
   const handleSearch = (event) => {
-    if (!event.target.value) return setTodos(todos);
+    // if (!event.target.value) return setTodos(todos);
 
     const resultTodos = todos.filter(
       (todo) =>
         todo.title.includes(event.target.value) ||
         todo.priority.includes(event.target.value)
     );
-
-    if (event.target.value === "") {
-      setFilteredData(todos);
-    } else {
-      setFilteredData(resultTodos);
-    }
   };
 
-
-  
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    setVal({});
-    console.log(val); 
-    setIsOpen(false);
-    if (val !== "") {
-      setTodos([ val , ...todos]);
-    }
-  }
-
+ 
   const handleDelete = (id) => {
-   
     const deleteTodo = todos.filter((Tid) => Tid.id !== id);
 
     setTodos([...deleteTodo]);
   };
-  const updateTodo=(id,val)=>{
+
+  const updateTodo = (id, val) => {
     //  const index= todos.findIndex(item=> item.id ===id)
     //  console.log(index);
     //  console.log(id);
-  }
+  };
 
-
+  console.log(filteredData);
 
   return (
     <>
-      <Search handleSearch={handleSearch} />
+      <Search
+        handleSearch={handleSearch}
+        onChange={(e) => setSearchedWord(e.target.value)}
+      />
 
       <div className="form">
         <span onClick={() => setIsOpen((prev) => !prev)}>
@@ -93,12 +112,17 @@ const [filteredData, setFilteredData] = useState("")
 
         <TodoList
           todos={todos}
+          filteredData={filteredData}
           handleDelete={handleDelete}
           handleSubmit={handleSubmit}
+          handleUpdate={handleUpdate}
           val={val}
+          closeModal={closeModal}
           setVal={setVal}
           sendTodo={updateTodo}
           setIsOPen={setIsOpen}
+          editOpen={editOpen}
+          setEditOpen={setEditOpen}
         />
       </div>
     </>

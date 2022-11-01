@@ -2,25 +2,32 @@ import React from "react";
 import "./style.css";
 
 function Edit({
-  handleChange,
   val,
   closeModal,
-  id,
   setTodos,
   setVal,
+  handleUpdate
 }) {
 
 
-  function handleUpdate(event) {
-    event.preventDefault();
-    setVal({});
-    closeModal();
-    if (val !== "") {
-      setTodos(val);
-    }
-  }
+  // function handleUpdate(event) {
+  //   event.preventDefault();
+  //   setVal({});
+  //   closeModal();
+  //   if (val !== "") {
+  //     setTodos(val);
+  //   }
+  // }
 
+const handleChange = (event) => {
+    const { name, value } = event.target;
 
+    setVal({
+      ...val,
+      [name]: value,
+      id: Math.floor(Math.random()*1000)
+    });
+  };
 
   return (
     <>
@@ -35,6 +42,7 @@ function Edit({
               className="input--todo"
               onChange={handleChange}
               value={val.title}
+              autoFocus
             />
 
             <fieldset className="radio--edit">

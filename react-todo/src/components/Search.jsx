@@ -3,7 +3,7 @@ import "./style.css"
 
 
 
-function Search({handleSearch}) {
+function Search({handleSearch, word}) {
   return (
   <div className="form--head">
         <div className="search">
@@ -12,6 +12,7 @@ function Search({handleSearch}) {
             type="text"
             name="Seacrch"
             id=""
+            value={word}
             onChange={handleSearch}
             placeholder="search todos..."
             className="seacrh"

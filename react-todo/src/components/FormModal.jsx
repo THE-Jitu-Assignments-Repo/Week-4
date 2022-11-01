@@ -13,6 +13,7 @@ function FormModal({ handleChange, val, handleSubmit }) {
         className="input--todo"
         onChange={handleChange}
         value={val.title}
+        autoFocus
       />
 
       <fieldset className="radio">

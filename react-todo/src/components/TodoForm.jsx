@@ -11,7 +11,7 @@ function TodoForm() {
   const [searchedWord, setSearchedWord] = useState("");
   const [editOpen, setEditOpen] = useState(false);
   const [val, setVal] = useState({
-    id: Math.floor(Math.random() * 1000),
+    id:0,
     title: "",
     priority: "",
   });
@@ -24,8 +24,12 @@ function TodoForm() {
     setVal((val) => ({
       ...val,
       [name]: value,
+      id: Math.floor(Math.random() * 1000)
     }));
   };
+
+
+
   const [test, setTest] = useState([]);
 
   function handleSubmit(event) {
@@ -34,8 +38,8 @@ function TodoForm() {
     setIsOpen(false);
     if (val !== "") {
       setTodos([val, ...todos]);
-      setTest(todos);
     }
+    console.log(val);
   }
 
   const closeModal = () => {
@@ -47,11 +51,8 @@ function TodoForm() {
 
     setVal({});
     closeModal();
-
-    setTodos([val])
     if (val !== "") {
       setTodos([val, ...todos]);
-
     };
   }
 
@@ -82,7 +83,7 @@ function TodoForm() {
     //  console.log(id);
   };
 
-  console.log(filteredData);
+  console.log(todos);
 
   return (
     <>

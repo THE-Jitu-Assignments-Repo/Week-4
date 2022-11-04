@@ -19,7 +19,7 @@ function Edit({
   //   }
   // }
 
-const handleChange = (event) => {
+const handleChanged = (event) => {
     const { name, value } = event.target;
 
     setVal({
@@ -40,7 +40,7 @@ const handleChange = (event) => {
               name="title"
               placeholder="Edit Task here?..."
               className="input--todo"
-              onChange={handleChange}
+              onChange={handleChanged}
               value={val.title}
               autoFocus
             />
@@ -53,7 +53,7 @@ const handleChange = (event) => {
                 id=""
                 value="high"
                 checked={val.priority === "high"}
-                onChange={handleChange}
+                onChange={handleChanged}
               />{" "}
               <p htmlFor="priority">High</p>
               <input
@@ -62,7 +62,7 @@ const handleChange = (event) => {
                 id=""
                 value="medium"
                 checked={val.priority === "medium"}
-                onChange={handleChange}
+                onChange={handleChanged}
               />
               <p htmlFor="priority">Medium</p>
               <input
@@ -71,7 +71,7 @@ const handleChange = (event) => {
                 id=""
                 value="low"
                 checked={val.priority === "low"}
-                onChange={handleChange}
+                onChange={handleChanged}
               />
               <p htmlFor="priority">Low</p>
             </fieldset>

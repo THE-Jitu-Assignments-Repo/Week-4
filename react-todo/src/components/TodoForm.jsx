@@ -94,7 +94,7 @@ function TodoForm() {
 
       <div className="form">
         <span onClick={() => setIsOpen((prev) => !prev)}>
-          Whats your plan for the day?...
+          Whats your plan for the day?... <button>Click ME!</button>
         </span>
 
         {isOpen && (

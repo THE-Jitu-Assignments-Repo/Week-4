@@ -10,7 +10,7 @@ function AddTask({ setModal }) {
           <button onClick={() => setModal(false)} className='cancel'>x</button>
         </div>
         <form className="form_main_modal">
-          <input type="text" name="task" className="task_input" placeholder="Write your task here..." />
+          <input type="text" name="task" className="task_input" placeholder="Write your task here..." autoFocus/>
 
           <fieldset className="radio--edit">
             <legend>Priority</legend>

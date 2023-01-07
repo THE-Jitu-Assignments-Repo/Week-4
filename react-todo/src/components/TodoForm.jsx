@@ -30,16 +30,14 @@ function TodoForm() {
 
 
 
-  const [test, setTest] = useState([]);
-
   function handleSubmit(event) {
     event.preventDefault();
-    setVal({});
     setIsOpen(false);
     if (val !== "") {
       setTodos([val, ...todos]);
+      // localStorage.setItem([val, ...todos])
     }
-    console.log(val);
+    setVal({});
   }
 
   const closeModal = () => {
@@ -61,8 +59,6 @@ function TodoForm() {
   const [filteredData, setFilteredData] = useState(newData);
 
   const handleSearch = (event) => {
-    // if (!event.target.value) return setTodos(todos);
-
     const resultTodos = todos.filter(
       (todo) =>
         todo.title.includes(event.target.value) ||
@@ -73,17 +69,11 @@ function TodoForm() {
  
   const handleDelete = (id) => {
     const deleteTodo = todos.filter((Tid) => Tid.id !== id);
-
     setTodos([...deleteTodo]);
   };
 
-  const updateTodo = (id, val) => {
-    //  const index= todos.findIndex(item=> item.id ===id)
-    //  console.log(index);
-    //  console.log(id);
-  };
-
-  console.log(todos);
+  
+  
 
   return (
     <>

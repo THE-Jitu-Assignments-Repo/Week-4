@@ -1,0 +1,11 @@
+.main-div {
+  width: 40vw;
+  height: 80vh; 
+  outline: none;
+  margin: 50px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  /* box-shadow: 0px 0px 4px 4px gray; */
+  overflow: auto;
+}

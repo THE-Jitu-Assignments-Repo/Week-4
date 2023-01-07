@@ -1,0 +1,71 @@
+.add_form_modal {
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  backdrop-filter: blur(3px);
+}
+.modal_content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 15% from the top and centered */
+  margin-top: 10em;
+  padding: 20px;
+  border: 1px solid #8888;
+  width: 30%;
+  border-radius: 5px;
+}
+
+.form_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 2px solid red; */
+  margin-bottom: 5px;
+}
+
+.form_main_modal {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.form_main_modal input {
+  padding: 5px;
+  padding-left: 5px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid rgb(55, 130, 211);
+}
+
+.button_form {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  /* border: 2px solid red; */
+  gap: 10px;
+}
+.button_form button {
+  padding: 5px 10px 5px 10px;
+  background: rgb(24, 120, 246);
+  outline: none;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+.button_form button:hover {
+  background-color: rgb(135, 180, 239);
+  cursor: pointer;
+}
+.cancel {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  background: rgb(246, 61, 24);
+  outline: none;
+  border: none;
+  color: white;
+}

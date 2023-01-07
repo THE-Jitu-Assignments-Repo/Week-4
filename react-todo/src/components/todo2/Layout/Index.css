@@ -15,7 +15,6 @@
   margin: auto;
   align-items: center;
   justify-content: space-between;
-  /* border: 2px solid red; */
   width: 30vw;
   row-gap: 10px;
 }
@@ -31,4 +30,10 @@
 .task_button:hover{
     background-color: rgb(135, 180, 239);
     cursor: pointer;
+}
+.task_tag{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(24, 120, 246);
 }

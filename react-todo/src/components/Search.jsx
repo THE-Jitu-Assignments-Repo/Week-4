@@ -10,12 +10,12 @@ function Search({handleSearch, word}) {
           <label htmlFor="seacrch">Search: </label>
           <input
             type="text"
-            name="Seacrch"
+            name="Search"
             id=""
             value={word}
             onChange={handleSearch}
             placeholder="search todos..."
-            className="seacrh"
+            className="search"
           />
         </div>
         <span>TODO APP &#x2611;</span>

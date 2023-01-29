@@ -37,3 +37,10 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: rgb(24, 120, 246);
 }
+
+.task--list{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}

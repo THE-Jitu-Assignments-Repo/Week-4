@@ -1,8 +1,12 @@
 import React from 'react'
 
-function Task() {
+function Task({item}) {
   return (
-    <div>Task</div>
+    <div className='task--list'>
+      <p>{item.text}</p>
+      <h4>{item.priority? 'high' : 'medium'}</h4>
+      <h4>{item.id}</h4>
+    </div>
   )
 }
 
